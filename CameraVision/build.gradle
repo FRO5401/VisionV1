@@ -10,11 +10,11 @@ mainClassName = 'Main'
 // Change the line below to change the name of the output jar
 def projectName = 'CameraVision'
 // Put in your FRC team number
-def team = '997'
+def team = '5401'
 // Put in a host address for network tables simulator server or leave blank for roboRio
 def nthost = 'localhost'
 // Put in a URL for the web camera
-def cameraURL = 'http://localhost:1337/mjpeg_stream'
+def cameraURL = 'http://10.160.129.12:8080/?action=stream'
 
 // Shouldn't need to change anything below this point
 

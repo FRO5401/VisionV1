@@ -27,9 +27,9 @@ def pythonDirectory = "${binDirectory}/python"
 
 remotes {
     piccb {
-        host = 'visioncoproc.local'
+        host = '10.160.129.12'
         user = 'pi'
-        password = 'raspberry'
+        password = 'team5401'
     }
 }
 
@@ -39,7 +39,7 @@ ssh.settings {
 }
 
 // Normally this is implicit with java plugin, but base plugin makes no sub-project assumptions
-build.dependsOn ':CameraServer:pydist', ':CameraVision:build', ':NTSimulator:pydist'
+build.dependsOn ':CameraVision:build', ':NTSimulator:pydist'
 
 task copyStartupScript(type: Copy) {
   description "Copies the startup application to the root bin directory."
@@ -122,7 +122,7 @@ task deploy(dependsOn: build) {
                     try {
                         // this little trick will quickly determine if we are connected
                         // to the internet and will throw an error if not
-                        execute 'nc -z 8.8.8.8 53'
+                        //execute 'nc -z 8.8.8.8 53'
                         executeSudo 'apt-get --assume-yes update'
                         executeSudo 'apt-get --assume-yes install dos2unix'
                         executeSudo 'apt-get --assume-yes install python3'
