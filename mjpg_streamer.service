@@ -1,0 +1,13 @@
+[Unit]
+Description=MJPG_Streamer Service
+After=network.target
+StartLimitIntervalSec=2
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/local/bin/mjpg_streamer -o "output_http.so" -i "input_raspicam.so -x 320 -y 240 -fps 15"
+
+[Install]
+WantedBy=multi-user.target
